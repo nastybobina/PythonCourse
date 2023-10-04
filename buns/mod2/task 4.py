@@ -1,15 +1,15 @@
 try:
-    user_input = int(input("Введите любое число: "))
+    user_input = int(input("Введите любое число: ")) # проверяю правильно ли ввели число
 except ValueError:
+    print("Неверный ввод") # если нет, выдаем ошибку и выходим из проверки
+    exit()
+
+if user_input <= 0: # проверяем натуральное ли число
     print("Неверный ввод")
     exit()
 
-if user_input <= 0:
-    print("Неверный ввод")
-    exit()
-
-def translation(to_convert, base):
-    if base < 2 or base > 36:
+def translation(to_convert, base): # функция перевода из 10й СС в любую СС
+    if base < 2 or base > 36: # СС с основанием меньше 2 не существует, а больше 36 необходимы другие мат. вычисления
         return ''
     output = ''
     alphabet = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
