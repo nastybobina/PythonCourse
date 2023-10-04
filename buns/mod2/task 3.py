@@ -1,5 +1,5 @@
 string = input("Введите числа через пробел: ")
-a, b, c = None, None, None
+a, b, c = '', '', ''
 cur_var = ''
 var_ind = 1
 for i in string:
