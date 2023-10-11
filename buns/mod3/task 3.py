@@ -1,2 +1,2 @@
 user_input = str(input().split(".")[::-1])
-print(user_input)
+print('\n'.join(map(str, user_input)))
