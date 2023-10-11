@@ -1,4 +1,4 @@
-matrix_side = int(input())
+matrix_side = int(input("Введите длину матрицы: "))
 for first_num in range(1, matrix_side + 1):
     for second_num in range(1, matrix_side + 1):
         if second_num != matrix_side:
