@@ -1,22 +1,22 @@
-the_path_to_the_file = str(input("Введите путь к файлу: "))
-
-opened_file = open(the_path_to_the_file, 'r')
-files_list = opened_file.read()
-dictionary_counter = {}
-letters_counter = 0
-for letter in files_list:
-    if letter.isalpha():
-        x = dictionary_counter.get(letter, 0)
-        dictionary_counter[letter] = x + 1
-        letters_counter += 1
-count_letter_dict = [(k, "{:8.6f}".format(dictionary_counter[k] / letters_counter)) for k in dictionary_counter.keys()]
-opened_file.close()
-count_letter_dict.sort(key=lambda y: y[1], reverse=True)
-
-the_path_to_the_end_file = str(input("Введите путь к файлу для статистики: "))
-my_file = open(the_path_to_the_end_file, "w+")
-for i in count_letter_dict:
-    my_file.write(i[0] + " " + i[1] + ' * 100%')
-    my_file.write('\n')
-    print(i[0] + " " + i[1] + ' * 100%')
-my_file.close()
+file_path = str(input("Введите путь к файлу: "))
+final_file_path = str(input("Введите путь к файлу для статистики: "))
+statistics = []
+statistics_symbol_ID = 0
+file_open = open(file_path, 'r', encoding='utf-8')
+file_data = file_open.read()
+file_data = list(file_data)
+another_file_data = file_data[:]
+for symbol_data in file_data:
+    if symbol_data.isalpha() and another_file_data.count(symbol_data) != 0:
+        statistics.append([symbol_data, another_file_data.count(symbol_data)])
+        for statistics_data in range(another_file_data.count(symbol_data)):
+            another_file_data.remove(symbol_data)
+file_open.close()
+statistics.sort(key=lambda x: x[1])
+final_file = open(final_file_path, "w+")
+for stats_of_one_symbol in statistics:
+    for statistics_data in stats_of_one_symbol:
+        final_file.write(str(statistics_data))
+        final_file.write(' ')
+    final_file.write('\n')
+final_file.close()
