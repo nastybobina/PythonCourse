@@ -67,5 +67,5 @@ def fibonacci_without_memoize(n):
     return fibonacci_without_memoize(n - 1) + fibonacci_without_memoize(n - 2)
 
 
-print(f"Тест функции с декоратором memoized:\n{testing_fibonacci_with_memoize(31)}\n\nТест функции без декоратора "
-      f"memoized:\n{testing_fibonacci_without_memoize(31)}")
+print(f"Тест функции с декоратором memoize:\n{testing_fibonacci_with_memoize(31)}\n\nТест функции без декоратора "
+      f"memoize:\n{testing_fibonacci_without_memoize(31)}")
