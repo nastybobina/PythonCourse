@@ -46,11 +46,11 @@ def fibonacci(n):
     return fibonacci(n - 1) + fibonacci(n - 2)
 
 @timer
-def test_fibonacci_with_memoize(n):
+def testing_fibonacci_with_memoize(n):
     return fibonacci_with_memoize(n)
 
 @timer
-def test_fibonacci_without_memoize(n):
+def testing_fibonacci_without_memoize(n):
     return fibonacci_without_memoize(n)
 
 @validate_args
@@ -67,5 +67,5 @@ def fibonacci_without_memoize(n):
     return fibonacci_without_memoize(n - 1) + fibonacci_without_memoize(n - 2)
 
 
-print(f"Тест функции с декоратором memoized:\n{test_fibonacci_with_memoize(31)}\n\nТест функции без декоратора "
-      f"memoized:\n{test_fibonacci_without_memoize(31)}")
+print(f"Тест функции с декоратором memoized:\n{testing_fibonacci_with_memoize(31)}\n\nТест функции без декоратора "
+      f"memoized:\n{testing_fibonacci_without_memoize(31)}")
